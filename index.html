@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TC Inc - Lobby de Proyectos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #050811 0%, #0c1425 50%, #030712 100%);
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: rgba(13, 22, 41, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 99, 235, 0.15);
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .avatar-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #3b82f6;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+      margin-bottom: 18px;
+    }
+
+    .profile h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #60a5fa, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .profile p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      background: rgba(30, 41, 59, 0.6);
+      color: #f8fafc;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(51, 65, 85, 0.6);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn span {
+      font-size: 1.25rem;
+      margin-right: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      border-color: #60a5fa;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="profile">
+      <img src="logo.jpeg" alt="Logo de TC Inc" class="avatar-img">
+      <h1>TC Inc</h1>
+      <p>Centro de enlaces y proyectos oficiales de Tech Center Inc.</p>
+    </div>
+
+    <div class="links">
+      <a href="https://stevhndz.github.io/Complejo-Educativo-Cat-lico-El-Carmelo-/" target="_blank" class="btn">
+        <span>⚓</span> Página "El Carmelo"
+      </a>
+
+      <a href="https://erickaaron115-ctrl.github.io/GOAT-sports/" target="_blank" class="btn">
+        <span>⚽</span> GOAT sports
+      </a>
+
+      <a href="https://erickaaron115-ctrl.github.io/Sabor-para-todos/" target="_blank" class="btn">
+        <span>🍔</span> Sabor para todos
+      </a>
+
+      <a href="https://okagamesver03.netlify.app" target="_blank" class="btn">
+        <span>🎮</span> OKA Games
+      </a>
+
+      <!-- NUEVO BOTÓN DE WHATSAPP -->
+      <a href="https://wa.me/50361779217?text=Hola,%20me%20gustaría%20más%20información%20sobre%20sus%20proyectos." target="_blank" class="btn">
+        <span>💬</span> Contáctanos
+      </a>
+    </div>
+  </div>
+
+  <audio id="musicaFondo" loop preload="auto">
+      <source src="Happy.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+      window.addEventListener('load', function() {
+          var audio = document.getElementById('musicaFondo');
+          audio.volume = 0.5;
+
+          var promesa = audio.play();
+          if (promesa !== undefined) {
+              promesa.catch(function() {
+                  var iniciar = function() {
+                      audio.play();
+                      window.removeEventListener('click', iniciar);
+                      window.removeEventListener('touchstart', iniciar);
+                      window.removeEventListener('keydown', iniciar);
+                  };
+                  window.addEventListener('click', iniciar);
+                  window.addEventListener('touchstart', iniciar);
+                  window.addEventListener('keydown', iniciar);
+              });
+          }
+      });
+  </script>
+
+</body>
+</html>
